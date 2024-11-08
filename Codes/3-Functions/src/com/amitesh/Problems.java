@@ -8,7 +8,9 @@ public class Problems {
 //        checkPrime(33);
 //        sumN(1000);
 
-        int res = squareRoot(24);
+//        int res = squareRoot(24);
+//        System.out.println(res);
+        int res = digits(24);
         System.out.println(res);
     }
 //Q. count all factors of int n .
