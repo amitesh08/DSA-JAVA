@@ -22,6 +22,6 @@ public class Main {
         //.charAt - it will convert the string in array format and then give the element at index 0 .
         //name  --> {n,a,m,e} --> n 
         char a = sc.nextLine().charAt(0);
-        System.out.println("cahr :"+a);
+        System.out.println("char :"+a);
     }
 }
