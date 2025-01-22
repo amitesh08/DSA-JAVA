@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class FirstLastElement {
     public static void main(String[] args) {
         //Q. 34. Find First and Last Position of Element in Sorted Array.
-        int[] nums = {5,7,7,8,8,10};
+        int[] nums = {5,8,8,8,8,10};
         int target = 8;
         System.out.println(Arrays.toString(searchRange(nums,target)));
     }
