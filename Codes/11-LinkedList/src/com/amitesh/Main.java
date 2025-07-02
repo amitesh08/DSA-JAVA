@@ -49,7 +49,6 @@ public class Main {
 
 
         list.printList();
-
     }
 
 }
