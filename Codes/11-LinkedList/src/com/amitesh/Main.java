@@ -1,4 +1,4 @@
-
+package com.amitesh;
 
 class Node{
     int data;
