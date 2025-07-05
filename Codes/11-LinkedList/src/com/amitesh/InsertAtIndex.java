@@ -26,9 +26,24 @@ public class InsertAtIndex {
         System.out.println("after insertion");
         printList(head);
 
-        delNode(25,head);
-        System.out.println("after deletion");
+        head = deleteHead(head);
+        System.out.println("after deletion of head");
         printList(head);
+
+        head = deleteLast(head);
+        System.out.println("after deletion last");
+        printList(head);
+
+        insertAtLast(head, 40);
+        insertAtLast(head, 50);
+        insertAtLast(head, 60);
+
+        System.out.println("before deletion At index");
+        printList(head);
+        head = deleteAtIndex(head,3);
+        System.out.println("after deletion At index");
+        printList(head);
+
     }
 
     // Example utility function: Print list
@@ -59,26 +74,48 @@ public class InsertAtIndex {
             count++;
         }
     }
+    public static Node deleteHead(Node head){
+        Node temp = head;
+        head = head.next;
+        return head;
+    }
+    public static Node deleteLast(Node head){
+        Node temp = head;
 
-//     public static void delNode(int value, Node head){
-//        //10->20->25->30->null
-//        //del 25  10->20->30->null
-//
-//        // Case 1: If list is empty
-//        if (head == null) return null ;
-//        Node temp = head;
-//
-//        if(value == 1 ){
-//            return head.next;
-//        }
-//        while(temp != null){
-//            if(temp.next.data == value){
-//                temp.next = temp.next.next;
-//            }
-//            if(temp.data == value){
-//                temp.next = null;
-//            }
-//            temp = temp.next;
-//        }
+        while(temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+        return head;
+    }
+    public static Node deleteAtIndex(Node head, int index){
+        Node temp = head;
+
+        if(index == 1) {
+            if (head == null) return null;  // Empty list
+            return head.next;  // Remove head
+        }
+
+        for (int i = 1; i < index-1; i++) {
+            temp = temp.next;
+        }
+
+        // Check if next node exists
+        if (temp.next == null) {
+            return head; // Index out of bounds
+        }
+
+        temp.next = temp.next.next;
+        return head;
+    }
+    public static void insertAtLast(Node head,int value){
+        Node n = new Node(value);
+        Node temp = head;
+
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = n;
+        System.out.println("value inserted");
     }
 }
